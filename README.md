@@ -1,52 +1,59 @@
-# realtime-water-quality-monitoring-android-application
-📌 Overview
+An IoT-based system that monitors water quality in real time using sensors and displays the data through a mobile application. Users can scan a QR code to instantly access water quality status along with a health-based conclusion.
 
-This project is an IoT-based smart water quality monitoring system that measures real-time water parameters using sensors and displays the results in a mobile application. A QR code is used to instantly access the water quality data and health status, making the system simple, fast, and user-friendly.
+[ Sensors ] → [ Microcontroller ] → [ Firebase Cloud ]
+                                      ↓
+                              [ Mobile App ]
+                                      ↓
+                                 [ QR Access ]
 
-The system helps users understand whether the water is safe for consumption by providing a clear health-based conclusion.
 
-🚀 Features
-📡 Real-time water quality monitoring
-📱 QR code-based instant data access
-📊 Mobile app dashboard for live sensor readings
-✅ Health status indication (Safe / Not Safe)
-☁️ Cloud database integration
-🔔 Real-time data updates
-🔋 Low-cost and scalable IoT solution
-🛠️ Tech Stack
-🔹 Hardware
-Microcontroller (ESP8266 / ESP32 / Arduino)
-Water quality sensors (pH, Turbidity, TDS, Temperature)
-Power supply module
-🔹 Software
-Mobile App: Flutter
-Backend / Cloud: Firebase Realtime Database / Firestore
-QR Code Integration: Dynamic QR linking to app/data
-Programming Language: Python / Embedded C
-⚙️ System Architecture
-Sensors collect water quality parameters.
-Microcontroller processes and sends data to Firebase cloud.
-Mobile app fetches real-time data from the cloud.
-QR code provides quick access to the monitoring dashboard.
-App analyzes values and shows health conclusion.
-📱 Application Screens
-Live Water Quality Dashboard
-Parameter-wise Data Display
-Health Conclusion Screen
-QR Scan Access Page
-🎯 Use Cases
-Rural water supply monitoring
-Smart city water management
-Household water safety checking
-Educational / research purposes
-📈 Future Improvements
-AI-based water quality prediction
-SMS / Push alert system
-Historical data analytics
-GPS-based water source tracking
-Web dashboard for authorities
-👨‍💻 Contributors
-Application Development
-IoT Hardware Integration
-UI Design & Cloud Integration
-Testing & Deployment
+⚙️ Installation & Setup
+🔹 1. Clone Repository
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+
+
+2. Setup IoT Device (ESP8266 / ESP32)
+# Install required libraries in Arduino IDE
+- WiFi.h
+- Firebase ESP Client
+- Sensor-specific libraries
+
+Update credentials in code:
+
+#define WIFI_SSID "your_wifi"
+#define WIFI_PASSWORD "your_password"
+#define API_KEY "your_firebase_api_key"
+#define DATABASE_URL "your_database_url"
+
+Upload code to microcontroller.
+
+
+
+🔹 3. Run Mobile App (Flutter)
+# Install dependencies
+flutter pub get
+
+# Run app
+flutter run
+
+
+🔹 4. Firebase Setup
+Create Firebase project
+Enable Firestore / Realtime DB
+Add Android app
+Download google-services.json and place inside:
+android/app/
+
+
+
+📊 Sample Output
+pH Level       : 7.2
+Turbidity      : Low
+TDS            : 150 ppm
+Temperature    : 28°C
+
+Status: ✅ Safe for Drinking
+
+
+
